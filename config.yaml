@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install python3 in Ubuntu
+    apt:
+      name: python3
+    when: ansible_distribution == "Ubuntu"
+
+  - name: install python3 in CentOS        
+    yum:
+      name: python3
+    when: ansible_distribution == "CentOS"
+
+  
