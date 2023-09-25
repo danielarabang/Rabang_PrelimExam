@@ -13,4 +13,13 @@
       name: python3
     when: ansible_distribution == "CentOS"
 
+  - name: install pip3 in Ubuntu
+    apt:
+      name=python3-pip state=present
+    when: ansible_distribution == "Ubuntu"
+
+  - name: install pip in CentOS
+    apt: 
+      name=python2-pip state=present 
+    when: ansible_distribution == "CentOS"
   
